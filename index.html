@@ -1,0 +1,397 @@
+<!-- 
+SIMULACION DE SISTEMAS DADOS
+GESTION I-2020
+
+Autor: Luis Fernando Fernandez Salinas
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulaci&oacute;n de Sistemas</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/datatables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="spinner/spinner.css">
+
+</head>
+<body>
+    <div class="spinner sz-10 shadow_rectangles rectangles"></div>
+<div id="app">
+    <v-app id="inspire">
+            <v-btn fixed dark fab bottom right color="pink" id="ppt" href="Presentacion/" target="_blank">
+                <v-icon>mdi-presentation</v-icon>
+            </v-btn>
+        <v-form>
+            <v-container>
+                <v-row>
+
+                    <v-col cols="2" offset-md="5">
+                        <v-text-field 
+                            label="Numero de corridas" 
+                            outlined type="number" 
+                            class="txt-md"
+                            id="corridas_input"
+                            hint="El numero max probado es 2050000"
+                            persistent-hint
+                        ></v-text-field>
+                        <div class="my-1">
+                            <v-btn color="primary" dark id="btn_comenzar">Comenzar . . .</v-btn>
+                        </div>    
+                    </v-col>
+
+                </v-row>
+                <v-row>
+
+                    <v-col cols="12">
+                    <v-card>
+                    <v-card-text>
+                    <table id="table_results_1" class="display cell-border table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>Suma</th>
+                                <th>Veces</th>
+                                <th>Promedio</th>
+                                <th>Porcentaje</th>
+                                <th>Total</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>2</td>
+                                <td class="v-2">0</td>
+                                <td class="a-2">0</td>
+                                <td class="b-2">0</td>
+                                <td class="c-2">0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="v-3">0</td>
+                                <td class="a-3">0</td>
+                                <td class="b-3">0</td>
+                                <td class="c-3">0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="v-4">0</td>
+                                <td class="a-4">0</td>
+                                <td class="b-4">0</td>
+                                <td class="c-4">0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="v-5">0</td>
+                                <td class="a-5">0</td>
+                                <td class="b-5">0</td>
+                                <td class="c-5">0</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td class="v-6">0</td>
+                                <td class="a-6">0</td>
+                                <td class="b-6">0</td>
+                                <td class="c-6">0</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td class="v-7">0</td>
+                                <td class="a-7">0</td>
+                                <td class="b-7">0</td>
+                                <td class="c-7">0</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td class="v-8">0</td>
+                                <td class="a-8">0</td>
+                                <td class="b-8">0</td>
+                                <td class="c-8">0</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td class="v-9">0</td>
+                                <td class="a-9">0</td>
+                                <td class="b-9">0</td>
+                                <td class="c-9">0</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td class="v-10">0</td>
+                                <td class="a-10">0</td>
+                                <td class="b-10">0</td>
+                                <td class="c-10">0</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td class="v-11">0</td>
+                                <td class="a-11">0</td>
+                                <td class="b-11">0</td>
+                                <td class="c-11">0</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td class="v-12">0</td>
+                                <td class="a-12">0</td>
+                                <td class="b-12">0</td>
+                                <td class="c-12">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </v-card-text>
+                    </v-card>
+                    </v-col>
+
+                </v-row>
+                <v-row>
+
+                    <v-col cols="6" offset-md="3">
+
+                        <canvas id="myChart"></canvas>
+
+                    </v-col>
+
+                </v-row>
+                <v-row>
+                
+                    <v-col cols="8" offset-md="2">
+                
+                        <canvas id="myChart_total"></canvas>
+                
+                    </v-col>
+                
+                </v-row>
+                
+            </v-container>
+        </v-form>
+    </v-app>
+</div>
+</body>
+<script src="spinner/spinner.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+    $(document).ready(function(){
+
+
+        $('#table_results_1').DataTable({
+             "pageLength": 50,
+            "columnDefs": [
+                { className : 'text-center', "targets": 0 },
+                { className: 'text-center', "targets": 1 },
+                { className : 'text-center', "targets": 2 },
+                { className : 'text-center', "targets": 3 },
+                { className: 'text-center', "targets": 4 },                
+                { "searchable": false, "targets": 2 },
+                { "searchable": false, "targets": 1 }
+            ]
+        } );
+
+        var vector_dados = [];
+        var vector_dados_total = [];
+        var vector_labels_total = [];
+
+        var canvas = document.getElementById('myChart');
+        var data = {
+            labels: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+            datasets: [
+                {
+                    label: "Dados",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHitRadius: 10,
+                    data: vector_dados,
+                }
+            ]
+        };
+
+        var option = {
+            showLines: true
+        };
+        var myLineChart = Chart.Line(canvas, {
+            data: data,
+            options: option
+        });
+
+        var canvas_toal_total = document.getElementById('myChart_total');
+        var data_total = {
+            labels: vector_labels_total,
+            datasets: [
+                {
+                    label: "Total",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 5,
+                    pointHitRadius: 10,
+                    data: vector_dados_total,
+                }
+            ]
+        };
+
+        var option_total = {
+            showLines: true
+        };
+        var myLineChart_total = Chart.Line(canvas_toal_total, {
+            data: data_total,
+            options: option_total
+        });
+        
+        $("#btn_comenzar").on('click',function(){
+            // Inicio del spinner para la carga de datos
+            start_spinner();
+            // Se reinicia la tabla
+            reset();
+            // Se almacena el valor del cuadro de texto en la variable total_corridas
+            var total_corridas = parseInt($("#corridas_input").val());
+            // Se utilza AJAX para la comunicacion con el servidor
+            // Con ajax manejaremos 3 parametros y una funcion.
+            // url = ubicacion del archivo que posee el servidor
+            // method = metodo de intercambio de informacion.
+            // data = datos que se enviaran al servidor
+            // success llama a una funcion que pasara en el momento que el servidor de una respuesta
+            $.ajax({
+                url: 'dados.php',
+                method: 'POST',
+                data: {
+                    corridas: total_corridas
+                },
+                success: function (dados_ajax) {
+                    // la respuesta consta de dos archivos JSON que son divididos por una funcion split
+                    // y almacenadas en dos array para su uso posterior
+                    var vector_parcial = (dados_ajax.split(']['))[0] + "]";
+                    var vector_total = "[" + (dados_ajax.split(']['))[1];
+                    // JSON.parse funcion para convertir un archivo JSON a un array
+                    vector_dados_total = JSON.parse(vector_total);
+                    vector_dados = JSON.parse(vector_parcial);
+                    // Creamos una variable temporal para almacenar los datos de suma
+                    var temp_value = 0;
+                    for (var i = 0; i < vector_dados.length; i++) {
+                        temp_value = parseInt($(".v-" + vector_dados[i]).text());
+                        $(".v-" + (i + 2)).text(vector_dados[i]);
+                        var prom = (Math.round((parseInt($(".v-" + (i + 2)).text()) / total_corridas) * 100) / 100).toFixed(2);
+                        $(".a-" + (i + 2)).text(prom);
+                        $(".b-" + (i + 2)).text((Math.round(((prom * 100)) * 100) / 100).toFixed(2) + " %");
+                        $(".c-" + (i + 2)).text(($(".v-" + (i + 2)).text()) + "/" + total_corridas);
+                    }
+                    // funciones necesarias para actualizar los grafos
+                    myLineChart.data.datasets[0].data = vector_dados;
+                    myLineChart.update();                    
+                    vector_labels_total = Array.from(Array(total_corridas).keys());
+                    if(total_corridas <= 100){
+                        myLineChart_total.data.datasets[0].data = vector_dados_total;
+                        myLineChart_total.data.labels = vector_labels_total;
+                        myLineChart_total.update();
+                    }else{
+                        myLineChart_total.data.datasets[0].data = [0];
+                        myLineChart_total.data.labels = ["0"];
+                        myLineChart_total.update();                        
+                    }
+                    // detenemos el spinner una vez el proceso haya terminado
+                    stop_spinner();
+                }
+            });
+        });
+        function reset(){
+            $(".v-2" ).text("0");
+            $(".v-3" ).text("0");
+            $(".v-4" ).text("0");
+            $(".v-5" ).text("0");
+            $(".v-6" ).text("0");
+            $(".v-7" ).text("0");
+            $(".v-8" ).text("0");
+            $(".v-9" ).text("0");
+            $(".v-10").text("0");
+            $(".v-11").text("0");
+            $(".v-12").text("0");
+
+            $(".a-2").text("0");
+            $(".a-3").text("0");
+            $(".a-4").text("0");
+            $(".a-5").text("0");
+            $(".a-6").text("0");
+            $(".a-7").text("0");
+            $(".a-8").text("0");
+            $(".a-9").text("0");
+            $(".a-10").text("0");
+            $(".a-11").text("0");
+            $(".a-12").text("0");
+            
+            $(".b-2").text("0");
+            $(".b-3").text("0");
+            $(".b-4").text("0");
+            $(".b-5").text("0");
+            $(".b-6").text("0");
+            $(".b-7").text("0");
+            $(".b-8").text("0");
+            $(".b-9").text("0");
+            $(".b-10").text("0");
+            $(".b-11").text("0");
+            $(".b-12").text("0");
+            
+            $(".c-2").text("0");
+            $(".c-3").text("0");
+            $(".c-4").text("0");
+            $(".c-5").text("0");
+            $(".c-6").text("0");
+            $(".c-7").text("0");
+            $(".c-8").text("0");
+            $(".c-9").text("0");
+            $(".c-10").text("0");
+            $(".c-11").text("0");
+            $(".c-12").text("0");
+        }
+        function dados(corridas){
+            var dado_1 = 0;
+            var dado_2 = 0;
+            var dado_resultados = [];
+            for(var i = 0; i < corridas; i++){
+                dado_1 = parseInt(Math.floor((Math.random() * 6) + 1));
+                dado_2 = parseInt(Math.floor((Math.random() * 6) + 1));
+                dado_resultados.push( (dado_1 + dado_2) );
+            }
+            return dado_resultados;
+        }
+    });
+</script>
+<script>
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+    })
+</script>
+</html>

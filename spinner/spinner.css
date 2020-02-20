@@ -1,0 +1,123 @@
+:root{
+    --size-1:  50px;
+    --size-2:  80px;
+    --size-4:  100px;
+    --size-6:  150px;
+    --size-8:  180px;
+    --size-10: 250px;
+
+    --main-1-color: black;
+    --main-2-color: black;
+    --main-3-color: black;
+    --main-4-color: black;
+    --main-5-color: black;
+
+    --main-shadow-color: rgba(255,255,255,0.6);
+}
+
+.spinner{
+    display: none;
+}
+
+.spinner.spin{
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+    /* background-color: #fff; */
+    /* border: 1px solid; */
+    z-index: 200;
+}
+
+.background_cover.spin{
+    content: ' ';
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.spinner.sz-1{  height: var(--size-1);  width: var(--size-1); }
+.spinner.sz-2{  height: var(--size-2);  width: var(--size-2); }
+.spinner.sz-4{  height: var(--size-4);  width: var(--size-4); }
+.spinner.sz-6{  height: var(--size-6);  width: var(--size-6); }
+.spinner.sz-8{  height: var(--size-8);  width: var(--size-8); }
+.spinner.sz-10{ height: var(--size-10);  width: var(--size-10); }
+
+.spinner.spin.rectangles::after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 50%;
+    background-color: #000;
+    transition: 0.1s;
+    transform: rotateY(0deg);
+    animation: rectangles_rotate 2s infinite;
+}
+
+.spinner.spin.rectangles.shadow_rectangles::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 50%;
+    background-color: #000;
+    transition: 0.1s;
+    transform: rotateY(0deg);
+    animation: rectangles_rotate_shadow 2s infinite;
+    animation-delay: 0.2s;
+}
+
+@keyframes rectangles_rotate{
+    0%{
+        transform: translate(0%, 0%) rotateY(0deg) rotateX(0deg);
+        background-color: var(--main-1-color);
+    }
+    25%{
+        transform: translate(100%, 0%) rotateY(180deg) rotateX(0deg);
+        background-color: var(--main-2-color);
+    }
+    50%{
+        transform: translate(100%,100%) rotateY(180deg) rotateX(180deg);
+        background-color: var(--main-3-color);
+    }
+    75%{
+        transform: translate(0%,100%) rotateY(0deg) rotateX(180deg);
+        background-color: var(--main-4-color);
+    }
+    100%{
+        transform: translate(0%,0%) rotateY(0deg) rotateX(0deg);
+        background-color: var(--main-5-color);
+    }
+}
+
+@keyframes rectangles_rotate_shadow{
+    0%{
+        transform: translate(0%, 0%) rotateY(0deg) rotateX(0deg);
+        background-color: var(--main-shadow-color);
+    }
+    25%{
+        transform: translate(100%, 0%) rotateY(180deg) rotateX(0deg);
+        background-color: var(--main-shadow-color);
+    }
+    50%{
+        transform: translate(100%,100%) rotateY(180deg) rotateX(180deg);
+        background-color: var(--main-shadow-color);
+    }
+    75%{
+        transform: translate(0%,100%) rotateY(0deg) rotateX(180deg);
+        background-color: var(--main-shadow-color);
+    }
+    100%{
+        transform: translate(0%,0%) rotateY(0deg) rotateX(0deg);
+        background-color: var(--main-shadow-color);
+    }
+}
